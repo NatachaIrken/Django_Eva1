@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.template import Context, Template
 
 # Create your views here.
 
@@ -47,6 +49,20 @@ def aventura(request):
             }
     return render(request, 'victoria_saldana_EVA1/productos.html', data)
 
+def simple_response(request):
+        return HttpResponse("HttpResponse.")
+
+def html_response(request):
+    html = """
+    <html>
+    <body>
+        <h1>Bienvenido a nuestra tienda de libros</h1>
+        <p>Mira con confianza</p>
+    </body>
+    </html>
+    """
+    return HttpResponse(html)
+
 
 def descripcion(request):   
     data_desc = { 
@@ -75,13 +91,5 @@ def descripcion(request):
             "Donde los árboles cantan": """ una aventura mágica que te transportará a un mundo 
             lleno de secretos y maravillas. Cada relato promete llevarte al límite de lo imaginable."""}
     }   
-
-    # descripcion =  data_desc.get(categoria, {}).get(producto, "descripcion no se encuentra")
-    
-    # data = {"titulo": "descripcion",
-    #        "categoria": categoria,
-    #        "producto": producto,
-    #        "descripcion": descripcion
-    #}
 
     return render(request, 'victoria_saldana_EVA1/descripcion.html', data_desc)
