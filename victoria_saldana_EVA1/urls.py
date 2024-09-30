@@ -16,9 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from victoria_saldana_EVA1.views import renderTemplate
+from Victoria_Eva1_APP import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', renderTemplate),
+    path('', views.index),
+    path('terror/', views.terror),
+    path('fantasia/', views.fantasia),
+    path('aventura/', views.aventura),
+    path('user/', views.user),
+    path('descripcion/', views.descripcion)
 ]
