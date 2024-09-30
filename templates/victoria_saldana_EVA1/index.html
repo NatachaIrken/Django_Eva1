@@ -1,19 +1,68 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-image: url('{% static "img/fondo1.jpg" %}');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #f0f0f0;
+        }
+        .custom-header {
+            background-color: rgba(255, 192, 203, 0.8);
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+        .btn-category {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .btn-category:hover {
+            transform: scale(1.05);
+        }
+        .btn-category img {
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
     <title>Venta de Libros Store</title>
 </head>
-<body class="container mt-5" background="/static/img/fondo1.jpg">
-    <div style="background-color:pink;" class="alert alert-info text-center display-1"><img src="{% static 'img/index.jpg' %}" alt="" width="200px">Venta de libros</div>
-    <div class="row">
-        <div class="col"><a href="/terror" class="btn btn-info w-100 p-3"><img src="/static/img/terror.jpg" alt="" width="300px" height="150px"><br>Terror</a></div>
-        <div class="col"><a href="/fantasia" class="btn btn-danger w-100 p-3"><img src="/static/img/fantasia.jpg" alt="" width="300px" height="150px"><br>Fantasia</a></div>
-        <div class="col"><a href="/aventura" class="btn btn-warning w-100 p-3"><img src="/static/img/aventura.jpg" alt="" width="300px" height="150px"><br>Aventura</a></div>
-    </div>
+<body class="container mt-5">
    
+    <div class="alert alert-info text-center custom-header display-1">
+        <img src="{% static 'img/index.jpg' %}" alt="" width="200px">
+        Venta de libros
+    </div>
+
+    <div class="row">
+        <div class="col mb-4">
+            <a href="/terror" class="btn btn-category w-100 p-3">
+                <img src="{% static 'img/terror.jpg' %}" alt="Terror" width="300px" height="150px"><br>
+                Terror
+            </a>
+        </div>
+        <div class="col mb-4">
+            <a href="/fantasia" class="btn btn-category w-100 p-3">
+                <img src="{% static 'img/fantasia.jpg' %}" alt="Fantasia" width="300px" height="150px"><br>
+                Fantasía
+            </a>
+        </div>
+        <div class="col mb-4">
+            <a href="/aventura" class="btn btn-category w-100 p-3">
+                <img src="{% static 'img/aventura.jpg' %}" alt="Aventura" width="300px" height="150px"><br>
+                Aventura
+            </a>
+        </div>
+    </div>
 </body>
 </html>
